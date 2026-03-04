@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brew Haven Coffee</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#f8f5f2;
+    color:#333;
+    scroll-behavior:smooth;
+}
+
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    background:#3e2723;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    transition:0.3s;
+}
+
+header.shadow{
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.logo{
+    color:#fff;
+    font-size:22px;
+    font-weight:700;
+}
+
+
+.menu-btn{
+    display:none;
+    font-size:24px;
+    color:#fff;
+    cursor:pointer;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:400;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ffcc80;
+}
+
+
+.hero{
+    height:100vh;
+    background:url("coffee.webp") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    color:#fff;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.55);
+    padding:40px;
+    border-radius:10px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    background:#6d4c41;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#5d4037;
+}
+
+.features{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.features h2{
+    font-size:32px;
+    margin-bottom:40px;
+    color:#3e2723;
+}
+
+.feature-box{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.feature{
+    background:#fff;
+    padding:30px;
+    width:280px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-8px);
+}
+
+.feature h3{
+    margin-bottom:10px;
+    color:#6d4c41;
+}
+
+.cta{
+    background:#3e2723;
+    color:#fff;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.cta h2{
+    margin-bottom:20px;
+}
+
+.cta .btn{
+    background:#ffcc80;
+    color:#3e2723;
+    font-weight:600;
+}
+
+.cta .btn:hover{
+    background:#fff3e0;
+}
+
+
+footer{
+    background:#2b1d1a;
+    color:#ccc;
+    padding:30px 8%;
+    text-align:center;
+    font-size:14px;
+}
+
+
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        background:#3e2723;
+        position:absolute;
+        top:60px;
+        right:8%;
+        width:200px;
+        padding:15px;
+        border-radius:8px;
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero-content{
+        padding:25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header id="header">
+    <div class="logo">☕ Brew Haven</div>
+    <div class="menu-btn" id="menuBtn">☰</div>
+    <nav>
+        <ul id="navLinks">
+            <li><a href="">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Order</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Freshly Brewed Happiness</h1>
+        <p>Experience rich flavors crafted from premium coffee beans around the world.</p>
+        <a href="#" class="btn">Explore Menu</a>
+    </div>
+</section>
+
+<section class="features">
+    <h2>Why Choose Us</h2>
+    <div class="feature-box">
+        <div class="feature">
+            <h3>Premium Beans</h3>
+            <p>Sourced from top coffee farms for rich and authentic taste.</p>
+        </div>
+        <div class="feature">
+            <h3>Expert Baristas</h3>
+            <p>Crafted with passion and precision by skilled professionals.</p>
+        </div>
+        <div class="feature">
+            <h3>Cozy Ambience</h3>
+            <p>A warm and welcoming space to relax or work peacefully.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Visit Us Today & Enjoy the Perfect Cup</h2>
+    <button class="btn" onclick="orderNow()">Order Now</button>
+</section>
+
+<footer>
+    © 2026 Brew Haven Coffee | All Rights Reserved
+</footer>
+
+<script>
+
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function(){
+    navLinks.classList.toggle("show");
+});
+
+
+window.addEventListener("scroll", function(){
+    const header = document.getElementById("header");
+    header.classList.toggle("shadow", window.scrollY > 50);
+});
+
+
+function orderNow(){
+    alert("Thank you for choosing Brew Haven! ☕ Your order page will open soon.");
+}
+
+</script>
+
+</body>
+</html>
